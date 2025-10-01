@@ -1,4 +1,5 @@
 package com.ieschabas;
+import javax.rmi.ssl.SslRMIClientSocketFactory;
 import java.util.Scanner;
 
 /**
@@ -12,12 +13,39 @@ public class Actividad10 {
         Scanner registro = new Scanner(System.in);
 
         System.out.println("¿En qué día del mes estamos?");
-        int dia = registro.nextInt();
+        int dia = Integer.parseInt(registro.nextLine());
 
         System.out.println("¿En qué mes del año nos encontramos?");
-        int mes = registro.nextInt();
+        int mes = Integer.parseInt(registro.nextLine());
 
         System.out.println("¿De qué año hablamos? ");
-        int año = registro.nextInt();
+        int año = Integer.parseInt(registro.nextLine());
+
+        String diaConCeros;
+        if (dia < 10){
+            diaConCeros= "0"+dia;
+                 } else {
+           diaConCeros=""+dia;
+        }
+        String mesConCeros;
+        if (mes < 10){
+           mesConCeros= "0"+mes;
+        } else {
+            mesConCeros= ""+mes;
+        }
+
+        String añoConCeros;
+        if (año < 1000 && año >100){
+          añoConCeros = "0"+año;
+        } else if (año <100 && año >10){
+            añoConCeros = "00"+año;
+        } else if (año <10) {
+            añoConCeros = "000"+año;
+        }else {
+            añoConCeros=""+año;
+        }
+
+        System.out.println("La fecha elegida en formato YYYY:MM:DD es: " + añoConCeros + ":" + mesConCeros + ":" + diaConCeros );
     }
 }
+
