@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Actividad10 {
     public static void main(String[] args) {
+        //Solicitud de datos
         Scanner registro = new Scanner(System.in);
 
         System.out.println("¿En qué día del mes estamos?");
@@ -20,6 +21,11 @@ public class Actividad10 {
 
         System.out.println("¿De qué año hablamos? ");
         int año = Integer.parseInt(registro.nextLine());
+
+        //Variables
+        /**
+         * En estas variables hemos puesto el IF por si el valor introducido fuera menor a 10, que añada un cero hasta rellenar el formato
+         */
 
         String diaConCeros;
         if (dia < 10){
@@ -33,7 +39,6 @@ public class Actividad10 {
         } else {
             mesConCeros= ""+mes;
         }
-
         String añoConCeros;
         if (año < 1000 && año >100){
           añoConCeros = "0"+año;
@@ -44,6 +49,7 @@ public class Actividad10 {
         }else {
             añoConCeros=""+año;
         }
+        //Mostrar en pantalla
 
         System.out.println("La fecha elegida en formato YYYY:MM:DD es: " + añoConCeros + ":" + mesConCeros + ":" + diaConCeros );
     }
